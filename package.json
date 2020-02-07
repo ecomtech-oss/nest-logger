@@ -1,0 +1,40 @@
+{
+  "name": "@samokat/nest-logger",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:samokat-oss/nest-logger.git",
+  "author": "Igor Kamyshev <ikamyshev@samokat.ru>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "prepare": "install-self-peers -- --ignore-scripts && yarn build",
+    "ci": "yarn soda lint",
+    "s": "yarn soda"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "6.*",
+    "@nestjs/core": "^6.11.6",
+    "cls-rtracer": "1.*",
+    "rxjs": "^6.5.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@solid-soda/scripts": "^1.15.2",
+    "@team-griffin/install-self-peers": "^1.1.1",
+    "@types/lodash": "^4.14.149",
+    "typescript": "^3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn soda lint-staged",
+      "pre-push": "yarn soda lint",
+      "commit-msg": "yarn soda commitlint"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
