@@ -26,7 +26,7 @@ export class LoggerModule implements NestModule {
     // pass
   }
 
-  forRoot(): DynamicModule {
+  static forRoot(): DynamicModule {
     return {
       module: LoggerModule,
       providers,
