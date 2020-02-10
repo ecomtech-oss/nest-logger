@@ -7,7 +7,8 @@ import {
 } from 'winston';
 import * as rTracer from 'cls-rtracer';
 import { mapValues, repeat } from 'lodash';
-import { ProjectConfig } from 'ProjectConfig';
+
+import { ProjectConfig } from './ProjectConfig';
 
 @Injectable()
 export class Logger {
