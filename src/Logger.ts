@@ -7,14 +7,16 @@ import {
 } from 'winston';
 import * as rTracer from 'cls-rtracer';
 import { mapValues, repeat } from 'lodash';
+import { ProjectConfig } from 'ProjectConfig';
 
 @Injectable()
 export class Logger {
   private readonly logger: WinstonLogger;
-  constructor() {
+
+  constructor(settings: ProjectConfig) {
     this.logger = createLogger({
       level: 'info',
-      defaultMeta: { project_name: 'timelabse-backend' },
+      defaultMeta: { project_name: settings.name },
       format: format.combine(
         format.timestamp({
           format: 'YYYY-MM-DD HH:mm:ss',

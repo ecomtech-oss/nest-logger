@@ -23,7 +23,7 @@ import { LoggerModule } from '@samokat/nest-logger';
 
 @Module({
   imports: [
-    LoggerModule.forRoot(),
+    LoggerModule.forRoot('my-favorite-project'),
   ],
 })
 export class AppModule implements NestModule {
@@ -74,27 +74,6 @@ export class AnyService {
 ```
 
 ## Details
-
-### Module registration
-
-`LoggerModule#forRoot` register module for whole application, if you want register it only for current module, just use this way:
-
-```ts
-// app.module.ts
-import { Module, NestModule } from '@nestjs/common';
-import { LoggerModule } from '@samokat/nest-logger';
-
-@Module({
-  imports: [
-    LoggerModule,
-  ],
-})
-export class AppModule implements NestModule {
-  public configure() {
-    // pass
-  }
-}
-```
 
 ### TraceID Generation
 
