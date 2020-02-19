@@ -78,3 +78,11 @@ export class AnyService {
 ### TraceID Generation
 
 Every log bounded for request, it can help to trace logs by requests. We use great [cls-rtracer](https://github.com/puzpuzpuz/cls-rtracer) library for generation TraceID, please install and setup it separately. If you using Express-adapter, you should just do [instruction from the first block](#usage). Otherwise, please refer to `cls-rtracer` documentation.
+
+## HowTo: Release
+
+1. Make your changes and commit it
+2. Run `yarn s release`
+3. Run `git push --follow-tags`
+4. Run `npm publish`
+5. Brilliant!
